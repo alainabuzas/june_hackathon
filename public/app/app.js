@@ -6,6 +6,7 @@ app.config([
     '$locationProvider',
     function($stateProvider, $urlRouterProvider, $locationProvider) {
         $urlRouterProvider.otherwise('/404');
+        // $httpProvider.interceptors.push('AuthInterceptor');
 
         $stateProvider
             .state('home', {
@@ -26,12 +27,17 @@ app.config([
                 url: 'profile',
                 templateUrl: 'views/profile.html',
                 controller: 'ProfileCtrl'
+            })
+            .state('404', {
+                url: '/404',
+                templateUrl: 'views/404.html'
+
             });
 
         $locationProvider.html5Mode(true);
     }
 ])
-
 // .config(['$httpProvider', function($httpProvider) {
 //     $httpProvider.interceptors.push('AuthInterceptor');
 // }]);
+

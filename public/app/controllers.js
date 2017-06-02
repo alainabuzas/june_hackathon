@@ -1,16 +1,28 @@
 angular.module('MainCtrls', ['MainServices'])
-	.controller('NavCtrl', ['$scope', 'Auth', '$state', 'Alerts', function($scope, Auth, $state, Alerts) {
+    .controller('NavCtrl', ['$scope', '$http', 'Auth', 'Alerts', '$state', function($scope, $http, Auth, Alerts, $state) {
         $scope.Auth = Auth;
-        $scope.logout = function() {
-            Auth.removeToken();
-            Alerts.add('success', 'Logged out!');
-            $state.reload();
+        $scope.status = {
+            isopen: false
         };
-  }])
-	.controller('AlertsCtrl', ['$scope', 'Alerts', function($scope, Alerts) {
+
+        $scope.logout = function() {
+            Alerts.add('danger', 'You logged out');
+            Auth.removeToken();
+            $state.go('home');
+        };
+
+        $scope.toggled = function(open) {};
+
+        $scope.toggleDropdown = function($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            $scope.status.isopen = !$scope.status.isopen;
+        };
+    }])
+    .controller('AlertsCtrl', ['$scope', '$http', 'Alerts', function($scope, $http, Alerts) {
         $scope.Alerts = Alerts;
-  }])
-	.controller('SignupCtrl', ['$scope', '$http', '$location', 'Auth', 'Alerts', function($scope, $http, $location, Auth, Alerts) {
+    }])
+    .controller('SignupCtrl', ['$scope', '$http', '$location', 'Auth', 'Alerts', function($scope, $http, $location, Auth, Alerts) {
         $scope.user = {
             name: '',
             email: '',
@@ -36,6 +48,7 @@ angular.module('MainCtrls', ['MainServices'])
                 console.log(res);
             });
         }
+
   }])
   .controller('LoginCtrl', ['$scope', '$http', '$location', 'Auth', 'Alerts', function($scope, $http, $location, Auth, Alerts) {
       $scope.user = {
@@ -54,3 +67,4 @@ angular.module('MainCtrls', ['MainServices'])
           });
       }
   }])
+
