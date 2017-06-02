@@ -30,7 +30,7 @@ angular.module('MainCtrls', ['MainServices'])
             phone: ''
         };
         $scope.userSignup = function() {
-        console.log($scope.user)
+            console.log($scope.user)
             $http.post('/api/users', $scope.user).then(function success(res) {
                     $location.path('/');
                 },
@@ -42,29 +42,43 @@ angular.module('MainCtrls', ['MainServices'])
                 Auth.saveToken(res.data);
                 Alerts.add('success', 'Signed up & Logged in!');
                 console.log('Token:', res.data);
-                $location.path('/');
+                $location.path('/profile');
             }, function error(res) {
                 Alerts.add('danger', 'Incorrect email/password');
                 console.log(res);
             });
         }
 
-  }])
-  .controller('LoginCtrl', ['$scope', '$http', '$location', 'Auth', 'Alerts', function($scope, $http, $location, Auth, Alerts) {
-      $scope.user = {
-          email: '',
-          password: ''
-      };
-      $scope.userLogin = function() {
-          $http.post('/api/auth', $scope.user).then(function success(res) {
-              Auth.saveToken(res.data);
-              Alerts.add('success', 'Logged in!');
-              console.log('Token:', res.data);
-              $location.path('/');
-          }, function error(res) {
-              Alerts.add('danger', 'Incorrect email/password');
-              console.log(res);
-          });
-      }
-  }])
+    }])
+    .controller('LoginCtrl', ['$scope', '$http', '$location', 'Auth', 'Alerts', function($scope, $http, $location, Auth, Alerts) {
+        $scope.user = {
+            email: '',
+            password: ''
+        };
+        $scope.userLogin = function() {
+            $http.post('/api/auth', $scope.user).then(function success(res) {
+                Auth.saveToken(res.data);
+                Alerts.add('success', 'Logged in!');
+                console.log('Token:', res.data);
+                $location.path('/profile');
+            }, function error(res) {
+                Alerts.add('danger', 'Incorrect email/password');
+                console.log(res);
+            });
+        }
+    }])
+    .controller('ProfileCtrl', ['$scope', '$http', 'Auth', 'Alerts', '$state', function($scope, $http, Auth, Alerts, $state) {
+        if (!Auth.isLoggedIn()) {
+            $state.go('home');
+        }
+        var user = Auth.currentUser();
 
+        $scope.edit = {};
+        $scope.token = {};
+
+        $http.get('/api/users/' + user.id).then(function(results) {
+            $scope.user = results.data;
+        }).catch(function(err) {
+            console.log(err);
+        });
+    }])
