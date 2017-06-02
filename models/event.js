@@ -11,7 +11,8 @@ var EventsSchema = mongoose.Schema({
     //     id: {type: Schema.Types.ObjectId, ref: 'Guest'},
     //     rsvp: Boolean
     // }],
-    items: Array
+    items: Array,
+    dont: String
 });
 
 

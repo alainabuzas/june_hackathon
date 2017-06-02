@@ -20,12 +20,14 @@ router.route('/')
         console.log('posting', req.body);
         var userId = req.body.user;
         var eventTitle = req.body.title;
+        var eventDont = req.body.dont;
         var eventDate = req.body.date;
         var eventItems = req.body.items;
         Event.create({
             title: eventTitle,
             date: eventDate,
-            items: eventItems
+            items: eventItems,
+            dont: eventDont
         }, function(err, event) {
             console.log('event.id====', event._id)
             if (err) return res.status(500).send(err);
