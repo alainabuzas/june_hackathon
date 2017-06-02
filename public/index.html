@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="css/images/favicon.png" />
+    <title>BBQ</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-resource.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap-tpls.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div ng-include="'app/views/navbar.html'" class="navview"></div>
+    <div ng-include="'app/views/alerts.html'" class="navview"></div>
+    <div ui-view>
+    </div>
+</body>
+
+</html>

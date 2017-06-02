@@ -1,0 +1,13 @@
+* {
+    font-family: sans-serif;
+}
+
+a {
+    color: #B70721;
+    text-decoration: none;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+}
