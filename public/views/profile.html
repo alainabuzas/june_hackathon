@@ -9,8 +9,9 @@
             </div>
             <div class="profile-events">
                 <h4>Your Events</h4>
-                <p ng-repeat="event in userEvents track by $index">
-                    {{event.title}}: {{event.date}}
+                <p ng-repeat="event in userEvents track by $index" class="one-event">
+                    <a href='/showEvent/{{event._id}}'>{{event.title}}</a>
+                    <br> {{event.date}}
                 </p>
             </div>
         </div>

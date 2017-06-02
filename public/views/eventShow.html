@@ -1,4 +1,3 @@
-
 <div class="big">
     <div class="eventedit-pg">
         <div class="event-info">
@@ -10,17 +9,15 @@
                 <input type="radio" name="rsvp" value="no">Sorry, not this time.
             </div>
             <div class="what-to-bring">
-                <hh3>What to Bring</h3>
-                    <div class="one-item" ng-repeat="item in event.items">
-                        <p>
-                            <input id="checkBox" type="checkbox"> {{ item }}
-                        </p>
-                    </div>
-                    <div class="dont-even">
-                        <p>{{ event.dont }}</p>
-                    </div>
+                <h3>What Can you Bring?</h3>
+                <div class="one-item" ng-repeat="item in event.items">
+                    <input id="checkBox" ng-click="checkClicked()" type="checkbox"> {{ item }} </div>
+                <div class="dont-even">
+                    <h3>Please Do NOT Bring</h3>
+                    <div>{{ event.dont }}</div>
+                </div>
             </div>
             <div class="sharethis-inline-share-buttons"></div>
         </div>
-        {{event.dont}}
     </div>
+</div>

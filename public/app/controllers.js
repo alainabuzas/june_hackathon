@@ -1,31 +1,34 @@
 angular.module('MainCtrls', ['MainServices'])
-    .controller('NewEventCtrl', ['$scope', 'Event', '$location', 'Alerts', function($scope, Event, $location, Alerts){
-    	$scope.event = {
-    		user: '5931a86ceca3f637d24ec5b2',
-    		title: '',
-    		date: '',
-    		items: []
-    	};
+    .controller('NewEventCtrl', ['$scope', 'Event', '$location', 'Alerts', function($scope, Event, $location, Alerts) {
+        $scope.event = {
+            user: '5931a4c9256f4d29f233606a',
+            title: '',
+            date: '',
+            items: []
+        };
 
-    	$scope.createEvent = function(){
-    	console.log($scope.event);
-    		Event.save($scope.event, function success(data){
-    			console.log('made event, this is data:', data);
-    			$location.path('/showEvent/'+data._id);
-    		}, function error(data){
-    			Alerts.add('danger', 'Event not created');
-    			console.log(data);
-    		});
-    	};
+        $scope.createEvent = function() {
+            console.log($scope.event);
+            Event.save($scope.event, function success(data) {
+                console.log('made event, this is data:', data);
+                $location.path('/showEvent/' + data._id);
+            }, function error(data) {
+                Alerts.add('danger', 'Event not created');
+                console.log(data);
+            });
+        };
     }])
-    .controller('ShowEventCtrl', ['$scope', '$stateParams', 'Event', '$location', 'Alerts', function($scope, $stateParams, Event, $location, Alerts){
-    	$scope.event={};
-    	Event.get({id: $stateParams.id}, function success(data){
-    		$scope.event = data;
-    		console.log(data);
-    	}, function error(data){
-    		console.log(data);
-    	})
+    .controller('ShowEventCtrl', ['$scope', '$stateParams', 'Event', '$location', 'Alerts', function($scope, $stateParams, Event, $location, Alerts) {
+        $scope.event = {};
+        Event.get({ id: $stateParams.id }, function success(data) {
+            $scope.event = data;
+            console.log(data);
+        }, function error(data) {
+            console.log(data);
+        })
+        $scope.checkClicked = function() {
+            Alerts.add('success', 'Thanks, I\'ll remember that');
+        }
     }])
     .controller('NavCtrl', ['$scope', '$http', 'Auth', 'Alerts', '$state', function($scope, $http, Auth, Alerts, $state) {
         $scope.Auth = Auth;
@@ -60,7 +63,7 @@ angular.module('MainCtrls', ['MainServices'])
         $scope.userSignup = function() {
             console.log($scope.user)
             $http.post('/api/users', $scope.user).then(function success(res) {
-                    $location.path('/profile/5931a86ceca3f637d24ec5b2');
+                    $location.path('/profile/5931a4c9256f4d29f233606a');
                 },
                 function error(res) {
                     Alerts.add('danger', 'Error. See console');
@@ -70,7 +73,7 @@ angular.module('MainCtrls', ['MainServices'])
                 Auth.saveToken(res.data);
                 Alerts.add('success', 'Signed up & Logged in!');
                 console.log('Token:', res.data);
-                $location.path('/profile/5931a86ceca3f637d24ec5b2'); ///replace with your user ID
+                $location.path('/profile/5931a4c9256f4d29f233606a'); ///replace with your user ID
             }, function error(res) {
                 Alerts.add('danger', 'Incorrect email/password');
                 console.log(res);
@@ -87,7 +90,7 @@ angular.module('MainCtrls', ['MainServices'])
                 Auth.saveToken(res.data);
                 Alerts.add('success', 'Logged in!');
                 console.log('Token:', res.data);
-                $location.path('/profile/5931a86ceca3f637d24ec5b2'); ///replace with your user ID
+                $location.path('/profile/5931a4c9256f4d29f233606a'); ///replace with your user ID
 
             }, function error(res) {
                 Alerts.add('danger', 'Incorrect email/password');

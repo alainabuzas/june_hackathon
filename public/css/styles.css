@@ -67,7 +67,9 @@ nav {
     z-index: 1;
 }
 
-#nav-logo {}
+#nav-logo {
+    font-weight: 700;
+}
 
 
 /* HOMEPAGE */
@@ -215,12 +217,18 @@ textarea {
     text-align: center;
 }
 
-.what-to-bring {
-    margin-bottom: 4em;
+.dont-even {
+    margin-bottom: 2em;
 }
 
 .info,
 .newevent,
-.event-info {
+.event-info,
+.profile-content {
     border-bottom: 6px solid #F9D035;
+}
+
+.one-event {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #F9D035;
 }
