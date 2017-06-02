@@ -27,6 +27,7 @@ app.config([
             //     templateUrl: 'views/profile.html'/*,
             //     controller: 'ProfileCtrl'*/
             // });
+
         $locationProvider.html5Mode(true);
     }
 ])
