@@ -1,5 +1,5 @@
 <nav ng-controller="NavCtrl">
-<!-- <div class="btn-group" uib-dropdown is-open="status.isopen">
+    <!-- <div class="btn-group" uib-dropdown is-open="status.isopen">
     <i class="fa fa-bars" aria-hidden="true" uib-dropdown-toggle ng-disabled="disabled"></i>
     <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
         <li role="menuitem"><a href="/signup">Sign Up</a></li>
@@ -10,6 +10,7 @@
 </div>
  -->
     <a href="/" id="nav-logo" class="logo">Grillist</a>
-    <a href="/profile" ng-show="Auth.isLoggedIn()" class="nav-a">Profile</a>
+    <a href="/profile/5931a4c9256f4d29f233606a" ng-show="Auth.isLoggedIn()" class="nav-a">Profile</a>
+    <a href="/event" ng-show="Auth.isLoggedIn()" class="nav-a">Create New Event</a>
     <a ng-click="logout()" ng-show="Auth.isLoggedIn()" class="nav-a">Logout</a>
 </nav>

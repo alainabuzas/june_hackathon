@@ -8,11 +8,11 @@ var EventsSchema = mongoose.Schema({
     },
     date: String,
     guests: [{
-        id: {type: Schema.Types.ObjectId, ref: 'Guest'},
+        id: { type: Schema.Types.ObjectId, ref: 'Guest' },
         rsvp: Boolean
     }],
     items: [{
-        id: {type: Schema.Types.ObjectId, ref: 'Item'}
+        id: { type: Schema.Types.ObjectId, ref: 'Item' }
     }]
 
 });
