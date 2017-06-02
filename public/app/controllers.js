@@ -30,7 +30,7 @@ angular.module('MainCtrls', ['MainServices'])
             phone: ''
         };
         $scope.userSignup = function() {
-        console.log($scope.user)
+            console.log($scope.user)
             $http.post('/api/users', $scope.user).then(function success(res) {
                     $location.path('/');
                 },
@@ -42,13 +42,12 @@ angular.module('MainCtrls', ['MainServices'])
                 Auth.saveToken(res.data);
                 Alerts.add('success', 'Signed up & Logged in!');
                 console.log('Token:', res.data);
-                $location.path('/');
+                $location.path('/profile');
             }, function error(res) {
                 Alerts.add('danger', 'Incorrect email/password');
                 console.log(res);
             });
         }
-
   }])
   .controller('LoginCtrl', ['$scope', '$http', '$location', 'Auth', 'Alerts', function($scope, $http, $location, Auth, Alerts) {
       $scope.user = {
@@ -69,6 +68,7 @@ angular.module('MainCtrls', ['MainServices'])
   }])
   .controller('ProfileCtrl', ['$scope', '$stateParams', 'User', function($scope, $stateParams, User){
   	$scope.user={};
+    var user = Auth.currentUser();
   	User.get({id:$stateParams.id}, function success(data){
   		$scope.user = data;
   	}, function error(data){
@@ -76,3 +76,13 @@ angular.module('MainCtrls', ['MainServices'])
   	});
   }]);
 
+
+        $scope.edit = {};
+        $scope.token = {};
+
+        $http.get('/api/users/' + user.id).then(function(results) {
+            $scope.user = results.data;
+        }).catch(function(err) {
+            console.log(err);
+        });
+    }])

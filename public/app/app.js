@@ -1,12 +1,12 @@
 var app = angular.module('BBQApp', ['ui.router', 'ui.bootstrap', 'MainCtrls']);
 
 app.config([
-    '$stateProvider',
-    '$urlRouterProvider',
-    '$locationProvider',
-    function($stateProvider, $urlRouterProvider, $locationProvider) {
-        $urlRouterProvider.otherwise('/404');
-        // $httpProvider.interceptors.push('AuthInterceptor');
+        '$stateProvider',
+        '$urlRouterProvider',
+        '$locationProvider',
+        function($stateProvider, $urlRouterProvider, $locationProvider) {
+            $urlRouterProvider.otherwise('/404');
+            // $httpProvider.interceptors.push('AuthInterceptor');
 
         $stateProvider
             .state('home', {
@@ -32,12 +32,11 @@ app.config([
                 url: '/404',
                 templateUrl: 'views/404.html'
 
-            });
+                });
 
-        $locationProvider.html5Mode(true);
-    }
-])
-// .config(['$httpProvider', function($httpProvider) {
-//     $httpProvider.interceptors.push('AuthInterceptor');
-// }]);
-
+            $locationProvider.html5Mode(true);
+        }
+    ])
+    // .config(['$httpProvider', function($httpProvider) {
+    //     $httpProvider.interceptors.push('AuthInterceptor');
+    // }]);
