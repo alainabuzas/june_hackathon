@@ -25,9 +25,9 @@ router.route('/')
             date: eventDate
         }, function(err, event) {
             if (err) return res.status(500).send(err);
-            User.findByIdAndUpdate(userId, { $push: { userEvents: [event._id] } }, function(err) {
-                if (err) return res.status(500).send(err);
-            });
+            // User.findByIdAndUpdate(userId, { $push: { userEvents: [event._id] } }, function(err) {
+            //     if (err) return res.status(500).send(err);
+            // });
             res.send(event);
         });
     });

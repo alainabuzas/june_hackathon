@@ -6,7 +6,7 @@ var EventsSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    date: Date,
+    date: String,
     guests: [{
         id: {type: Schema.Types.ObjectId, ref: 'Guest'},
         rsvp: Boolean

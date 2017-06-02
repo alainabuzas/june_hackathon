@@ -1,14 +1,15 @@
 <nav ng-controller="NavCtrl">
-    <!-- <div class="btn-group" uib-dropdown is-open="status.isopen">
+<div class="btn-group" uib-dropdown is-open="status.isopen">
     <i class="fa fa-bars" aria-hidden="true" uib-dropdown-toggle ng-disabled="disabled"></i>
     <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
         <li role="menuitem"><a href="/signup">Sign Up</a></li>
         <li role="menuitem"><a href="/login">Log In</a></li>
-        <li role="menuitem"><a href="/profile">Profile</a></li>
-        <li role="menuitem" ng-click="logout()" ng-show="Auth.isLoggedIn()"><a href="#">Logout</a></li>
+        <li role="menuitem"><a href="/profile/5931a86ceca3f637d24ec5b2">Profile</a></li>
+        <li role="menuitem" ng-click="logout()"><a href="#">Logout</a></li>
     </ul>
 </div>
- -->
+{{$scope.user}}
+
     <a href="/" id="nav-logo" class="logo">Grillist</a>
     <a href="/profile" ng-show="Auth.isLoggedIn()" class="nav-a">Profile</a>
     <a ng-click="logout()" ng-show="Auth.isLoggedIn()" class="nav-a">Logout</a>

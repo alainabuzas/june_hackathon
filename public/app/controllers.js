@@ -48,30 +48,34 @@ angular.module('MainCtrls', ['MainServices'])
                 console.log(res);
             });
         }
+  }])
+  .controller('LoginCtrl', ['$scope', '$http', '$location', 'Auth', 'Alerts', function($scope, $http, $location, Auth, Alerts) {
+      $scope.user = {
+          email: '',
+          password: ''
+      };
+      $scope.userLogin = function() {
+          $http.post('/api/auth', $scope.user).then(function success(res) {
+              Auth.saveToken(res.data);
+              Alerts.add('success', 'Logged in!');
+              console.log('Token:', res.data);
+              $location.path('/');
+          }, function error(res) {
+              Alerts.add('danger', 'Incorrect email/password');
+              console.log(res);
+          });
+      }
+  }])
+  .controller('ProfileCtrl', ['$scope', '$stateParams', 'User', function($scope, $stateParams, User){
+  	$scope.user={};
+    var user = Auth.currentUser();
+  	User.get({id:$stateParams.id}, function success(data){
+  		$scope.user = data;
+  	}, function error(data){
+  		console.log(data);
+  	});
+  }]);
 
-    }])
-    .controller('LoginCtrl', ['$scope', '$http', '$location', 'Auth', 'Alerts', function($scope, $http, $location, Auth, Alerts) {
-        $scope.user = {
-            email: '',
-            password: ''
-        };
-        $scope.userLogin = function() {
-            $http.post('/api/auth', $scope.user).then(function success(res) {
-                Auth.saveToken(res.data);
-                Alerts.add('success', 'Logged in!');
-                console.log('Token:', res.data);
-                $location.path('/profile');
-            }, function error(res) {
-                Alerts.add('danger', 'Incorrect email/password');
-                console.log(res);
-            });
-        }
-    }])
-    .controller('ProfileCtrl', ['$scope', '$http', 'Auth', 'Alerts', '$state', function($scope, $http, Auth, Alerts, $state) {
-        if (!Auth.isLoggedIn()) {
-            $state.go('home');
-        }
-        var user = Auth.currentUser();
 
         $scope.edit = {};
         $scope.token = {};
