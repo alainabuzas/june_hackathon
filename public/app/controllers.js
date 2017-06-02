@@ -69,7 +69,7 @@ angular.module('MainCtrls', ['MainServices'])
                 Auth.saveToken(res.data);
                 Alerts.add('success', 'Signed up & Logged in!');
                 console.log('Token:', res.data);
-                $location.path('/profile/5931a86ceca3f637d24ec5b2');///replace with your user ID
+                $location.path('/profile/5931a86ceca3f637d24ec5b2'); ///replace with your user ID
             }, function error(res) {
                 Alerts.add('danger', 'Incorrect email/password');
                 console.log(res);
@@ -86,7 +86,7 @@ angular.module('MainCtrls', ['MainServices'])
                 Auth.saveToken(res.data);
                 Alerts.add('success', 'Logged in!');
                 console.log('Token:', res.data);
-                $location.path('/profile/5931a86ceca3f637d24ec5b2');///replace with your user ID
+                $location.path('/profile/5931a86ceca3f637d24ec5b2'); ///replace with your user ID
 
             }, function error(res) {
                 Alerts.add('danger', 'Incorrect email/password');
