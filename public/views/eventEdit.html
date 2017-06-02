@@ -1,1 +1,24 @@
-
+<div class="eventedit-pg">
+    <div class="container">
+        <form ng-submit="createEvent()" class="event-form">
+            <h3>Create a New Event</h3>
+            <div class="form-group user">
+                <label for="user">User</label>
+                <input type="text" class="form-control" id="user" value="5931a86ceca3f637d24ec5b2" ng-model="event.user">
+            </div>
+            <div class="form-group title">
+                <label for="title">Name of Your Event</label>
+                <input type="text" class="form-control" id="title" placeholder="Clever Event Name" ng-model="event.title" required>
+            </div>
+            <div class="form-group date">
+                <label for="date">Date of Your Event</label>
+                <input type="date" class="form-control" id="date" placeholder="Date of Your Event" ng-model="event.date" required>
+            </div>
+            <div class="form-group items">
+                <label for="item">What Guests Should Bring</label>
+                <input type="items" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items" required>
+            </div>
+            <button type="submit" class="create-event-btn">I'm Ready to Party</button>
+        </form>
+    </div>
+</div>

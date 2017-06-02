@@ -1,4 +1,23 @@
 angular.module('MainCtrls', ['MainServices'])
+    .controller('NewEventCtrl', ['$scope', 'Event', '$location', 'Alerts', function($scope, Event, $location, Alerts){
+    	$scope.event = {
+    		user: '',
+    		title: '',
+    		date: '',
+    		items: ''
+    	};
+
+    	$scope.createEvent = function(){
+    	console.log($scope.event)
+    		Event.save($scope.event, function success(data){
+    			$location.path('/profile/5931a86ceca3f637d24ec5b2')
+    		}, function error(data){
+    			Alerts.add('danger', 'Event not created')
+    			console.log(data)
+    		})
+    	}
+
+    }])
     .controller('NavCtrl', ['$scope', '$http', 'Auth', 'Alerts', '$state', function($scope, $http, Auth, Alerts, $state) {
         $scope.Auth = Auth;
         $scope.status = {
@@ -32,7 +51,7 @@ angular.module('MainCtrls', ['MainServices'])
         $scope.userSignup = function() {
             console.log($scope.user)
             $http.post('/api/users', $scope.user).then(function success(res) {
-                    $location.path('/');
+                    $location.path('/profile/5931a86ceca3f637d24ec5b2');
                 },
                 function error(res) {
                     Alerts.add('danger', 'Error. See console');
@@ -42,7 +61,7 @@ angular.module('MainCtrls', ['MainServices'])
                 Auth.saveToken(res.data);
                 Alerts.add('success', 'Signed up & Logged in!');
                 console.log('Token:', res.data);
-                $location.path('/profile');
+                $location.path('/profile/5931a86ceca3f637d24ec5b2');
             }, function error(res) {
                 Alerts.add('danger', 'Incorrect email/password');
                 console.log(res);
@@ -59,7 +78,7 @@ angular.module('MainCtrls', ['MainServices'])
                 Auth.saveToken(res.data);
                 Alerts.add('success', 'Logged in!');
                 console.log('Token:', res.data);
-                $location.path('/');
+                $location.path('/profile/5931a86ceca3f637d24ec5b2');
             }, function error(res) {
                 Alerts.add('danger', 'Incorrect email/password');
                 console.log(res);
