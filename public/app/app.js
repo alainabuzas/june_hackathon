@@ -9,29 +9,29 @@ app.config([
         $urlRouterProvider.otherwise('/404');
 
         $stateProvider
-        	.state('home', {
-        		url: '/',
-        		templateUrl: 'views/home.html'
-        	})
-        	// .state('login', {
-        	// 	url: '/login',
-        	// 	templateUrl: 'app/views/userLogin.html'/*,
-        	// 	controller: 'LoginCtrl'*/
-        	// })
-        	// .state('signup', {
-        	// 	url: '/signup',
-        	// 	templateUrl: 'app/views/userSignup.html',
-        	// 	controller: 'SignupCtrl'
-        	// })
-        	// .state('profile', {
-        	// 	url: 'profile',
-        	// 	templateUrl: 'app/views/profile.html',
-        	// 	controller: 'ProfileCtrl'
-        	// });
-        	 $locationProvider.html5Mode(true);
+            .state('home', {
+                url: '/',
+                templateUrl: 'app/views/home.html'
+            })
+            .state('login', {
+                url: '/login',
+                templateUrl: 'app/views/userLogin.html',
+                controller: 'LoginCtrl'
+            })
+            .state('signup', {
+                url: '/signup',
+                templateUrl: 'app/views/userSignup.html',
+                controller: 'SignupCtrl'
+            })
+            .state('profile', {
+                url: 'profile',
+                templateUrl: 'app/views/profile.html',
+                controller: 'ProfileCtrl'
+            });
+        $locationProvider.html5Mode(true);
     }
 ])
 
-// .config(['$httpProvider', function($httpProvider){
-// 	$httpProvider.interceptors.push('AuthInterceptor');
-// }]);
+.config(['$httpProvider', function($httpProvider) {
+    $httpProvider.interceptors.push('AuthInterceptor');
+}]);

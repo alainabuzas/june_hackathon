@@ -1,10 +1,16 @@
 * {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
+    color: #000;
 }
 
 a {
-    color: #B70721;
+    color: #E05034;
     text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #F9D035;
 }
 
 .container {

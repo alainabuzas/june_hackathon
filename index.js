@@ -10,6 +10,8 @@ var secret = process.env.JWT_SECRET;
 var mongoose = require('mongoose');
 var User = require('./models/user');
 mongoose.connect('mongodb://localhost/bbqueue'); //change to db want to use
+app.use(require('morgan')('dev'));
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -26,9 +28,11 @@ app.use(function(err, req, res, next) {
 });
 
 
+
 // app.use('/api/events', require('./controllers/events'));
 // app.use('/api/guests', require('./controllers/guests'));
 // app.use('/api/items', require('./controllers/items'));
+
 
 
 app.post('/api/auth', function(req, res) {
