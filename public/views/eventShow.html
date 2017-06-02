@@ -1,0 +1,12 @@
+<div class="eventedit-pg">
+    <div class="event-info">
+        <h2>Create a New Event</h2>
+        <p>{{ event.title }}</p>
+        <p> {{ event.date }}</p>
+        <div class="what-to-bring">
+            <div class="one-item" ng-model="items" ng-repeat="item in items">
+                <p>{{ event.item }}</p>
+            </div>
+        </div>
+    </div>
+</div>

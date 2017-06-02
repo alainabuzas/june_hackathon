@@ -67,6 +67,8 @@ nav {
     z-index: 1;
 }
 
+#nav-logo {}
+
 
 /* HOMEPAGE */
 
@@ -93,7 +95,8 @@ nav {
     margin-top: 1em;
 }
 
-.signin-form {
+.signin-form,
+.signup-form {
     width: 60%;
 }
 
@@ -111,11 +114,44 @@ nav {
     margin-top: 2em;
 }
 
+.signup-pg {
+    background-image: url('/css/images/bbq-so-good.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+}
+
 
 /* PROFILE */
 
+.profile-pg {
+    background-image: url('/css/images/picnic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+    top: 0;
+}
+
 .profile-content {
-    margin-top: 7em;
+    width: 60%;
+    background-color: #fff;
+    padding: 2em;
+}
+
+.showprofile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile-info {
+    width: 45%;
+}
+
+.profile-events {
+    width: 45%;
 }
 
 
@@ -136,7 +172,7 @@ nav {
     background-size: cover;
     margin: 0;
     margin-top: 0;
-    height: 100vh;
+    height: 100%;
 }
 
 .newevent {
@@ -153,5 +189,9 @@ nav {
 
 .create-event-btn {
     margin-top: 1em;
+    width: 100%;
+}
+
+textarea {
     width: 100%;
 }
