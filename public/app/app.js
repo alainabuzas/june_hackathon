@@ -11,10 +11,6 @@ app.config([
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'views/home.html'
-            })
-            .state('login', {
-                url: '/login',
                 templateUrl: 'views/userLogin.html',
                 controller: 'LoginCtrl'
             })

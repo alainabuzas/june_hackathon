@@ -66,22 +66,28 @@ angular.module('MainCtrls', ['MainServices'])
           });
       }
   }])
-  .controller('ProfileCtrl', ['$scope', '$stateParams', 'User', function($scope, $stateParams, User){
-  	$scope.user={};
-    var user = Auth.currentUser();
-  	User.get({id:$stateParams.id}, function success(data){
-  		$scope.user = data;
-  	}, function error(data){
-  		console.log(data);
-  	});
-  }]);
-
+  .controller('ProfileCtrl', ['$scope', '$http', '$stateParams','Auth', 'Alerts', '$state', function($scope, $http, $stateParams, Auth, Alerts, $state) {
+        if (!Auth.isLoggedIn()) {
+            $state.go('home');
+        }
+        var user = Auth.currentUser();
 
         $scope.edit = {};
         $scope.token = {};
 
         $http.get('/api/users/' + user.id).then(function(results) {
             $scope.user = results.data;
+            $scope.userEvents = [];
+            for(var i=0; i<results.data.userEvents.length; i++){
+	            $http.get('/api/events/'+results.data.userEvents[i]).then(function(events){
+	            	console.log('event', events.data)
+	            	$scope.userEvents.push(events.data);
+	            })
+            }
+	          console.log('userEvents', $scope.userEvents)
+            // petExistsOnProfile is the toggle for displaying either the pet image
+            // or prompt to add one, it will follow after $scope.user is updated
+           // $scope.petExistsOnProfile = Auth.checkForPetOnProfile($scope.user);
         }).catch(function(err) {
             console.log(err);
         });
