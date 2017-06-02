@@ -77,9 +77,18 @@ angular.module('MainCtrls', ['MainServices'])
 
         $http.get('/api/users/' + user.id).then(function(results) {
             $scope.user = results.data;
+            $scope.userEvents = [];
+            for(var i=0; i<results.data.userEvents.length; i++){
+	            $http.get('/api/events/'+results.data.userEvents[i]).then(function(events){
+	            	console.log('event', events.data)
+	            	$scope.userEvents.push(events.data);
+	            })
+            }
+	          console.log('userEvents', $scope.userEvents)
             // petExistsOnProfile is the toggle for displaying either the pet image
             // or prompt to add one, it will follow after $scope.user is updated
-            $scope.petExistsOnProfile = Auth.checkForPetOnProfile($scope.user);
+           // $scope.petExistsOnProfile = Auth.checkForPetOnProfile($scope.user);
+
         }).catch(function(err) {
             console.log(err);
         });
