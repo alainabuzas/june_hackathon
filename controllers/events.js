@@ -32,6 +32,7 @@ router.route('/')
             User.findByIdAndUpdate(userId, { $push: { userEvents: event._id } }, function(err) {
                 if (err) return res.status(500).send(err);
             });
+            console.log('sending back event', event)
             res.send(event);
         });
     });
