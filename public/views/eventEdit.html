@@ -2,13 +2,9 @@
     <div class="container">
         <form ng-submit="createEvent()" class="event-form">
             <h3>Create a New Event</h3>
-            <div class="form-group user">
-                <label for="user">User</label>
-                <input type="text" class="form-control" id="user" value="5931a86ceca3f637d24ec5b2" ng-model="event.user">
-            </div>
             <div class="form-group title">
                 <label for="title">Name of Your Event</label>
-                <input type="text" class="form-control" id="title" placeholder="Clever Event Name" ng-model="event.title" required>
+                <input type="text" class="form-control" id="title" placeholder="Clever Event Name" value="fjdskl" ng-model="event.title" required>
             </div>
             <div class="form-group date">
                 <label for="date">Date of Your Event</label>
@@ -16,7 +12,16 @@
             </div>
             <div class="form-group items">
                 <label for="item">What Guests Should Bring</label>
-                <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items" required>
+                <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[0]" required>
+                <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[1]" required>
+                <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[2]" required>
+                <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[3]" required>
+                <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[4]" required>
+                <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[5]" required>
+                <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[6]" required>
+                <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[7]" required>
+                <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[8]" required>
+                <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[9]" required>
             </div>
             <button type="submit" class="create-event-btn">I'm Ready to Party</button>
         </form>

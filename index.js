@@ -6,6 +6,7 @@ var jwt = require('jsonwebtoken');
 var app = express();
 
 var secret = process.env.JWT_SECRET;
+var myId = process.env.USER_ID;
 
 var mongoose = require('mongoose');
 var User = require('./models/user');
