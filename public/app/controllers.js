@@ -106,8 +106,10 @@ angular.module('MainCtrls', ['MainServices'])
 
         $http.get('/api/users/' + user.id).then(function(results) {
             $scope.user = results.data;
+            console.log(results.data)
             $scope.userEvents = [];
             for (var i = 0; i < results.data.userEvents.length; i++) {
+                console.log('userEvent.length', results.data.userEvents.length)
                 $http.get('/api/events/' + results.data.userEvents[i]).then(function(events) {
                     console.log('event', events.data)
                     $scope.userEvents.push(events.data);
