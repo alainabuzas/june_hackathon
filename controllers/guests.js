@@ -13,7 +13,7 @@ router.post('/', (req,res)=>{
 
 //Route to get guest by id
 router.route('/:id').get((req,res)=>{
-	Guest.findBy
+
 })
 
 module.exports = router;

@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en" ng-app="app">
+<!DOCTYPE html>
+<html lang="en" ng-app="BBQApp">
 
 <head>
     <base href="/">
@@ -10,17 +10,19 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-resource.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap-tpls.js"></script>
-    <script src="js/main.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers.js"></script>
+    <script src="app/services.js"></script>
 </head>
 
-<body>
-    <div ng-include="'app/views/navbar.html'" class="navview"></div>
-    <div ng-include="'app/views/alerts.html'" class="navview"></div>
-    <div ui-view>
-    </div>
+<body >
+fdjskal
+    <div ng-include="'views/navbar.html'" class="navview"></div>
+    <div ng-include="'views/alerts.html'" class="navview"></div>
+    <div ui-view></div>
 </body>
 
 </html>
