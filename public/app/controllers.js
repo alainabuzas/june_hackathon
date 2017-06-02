@@ -67,4 +67,12 @@ angular.module('MainCtrls', ['MainServices'])
           });
       }
   }])
+  .controller('ProfileCtrl', ['$scope', '$stateParams', 'User', function($scope, $stateParams, User){
+  	$scope.user={};
+  	User.get({id:$stateParams.id}, function success(data){
+  		$scope.user = data;
+  	}, function error(data){
+  		console.log(data);
+  	});
+  }]);
 

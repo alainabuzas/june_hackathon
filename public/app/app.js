@@ -24,7 +24,7 @@ app.config([
                 controller: 'SignupCtrl'
             })
             .state('profile', {
-                url: 'profile',
+                url: '/profile/:id',
                 templateUrl: 'views/profile.html',
                 controller: 'ProfileCtrl'
             })

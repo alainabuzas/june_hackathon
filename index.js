@@ -30,7 +30,7 @@ app.use(function(err, req, res, next) {
 
 
 app.use('/api/users', require('./controllers/users'));
-// app.use('/api/events', require('./controllers/events'));
+app.use('/api/events', require('./controllers/events'));
 // app.use('/api/guests', require('./controllers/guests'));
 // app.use('/api/items', require('./controllers/items'));
 
