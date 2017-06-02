@@ -19,6 +19,8 @@ button {
     border: none;
     padding: 20px;
     font-size: 15px;
+    background-color: #E05034;
+    color: #fff;
 }
 
 .container {
@@ -28,9 +30,18 @@ button {
 
 .form-control {
     border: none;
-    background-color: #CDEFFE;
+    border-bottom: 1px solid #CDEFFE;
     padding: 10px;
+}
+
+nav {
+    background-color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
 }
 
 
 /* HOMEPAGE */
+
+.info {}
