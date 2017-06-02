@@ -104,6 +104,10 @@ nav {
     width: 100%;
 }
 
+.form-group {
+    margin-top: 20px;
+}
+
 .signin-btn {
     margin-top: 2em;
 }
@@ -120,4 +124,36 @@ nav {
 
 .four-oh-four {
     text-align: center;
+    background-color: #F0F0F0;
+    height: 100vh;
+}
+
+
+/* EVENT EDIT */
+
+.eventedit-pg {
+    background-image: url('/css/images/grillin.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    margin-top: 0;
+    height: 100vh;
+}
+
+.newevent {
+    background-color: #fff;
+    width: 50%;
+    padding: 2em;
+    margin: auto;
+    margin-top: 3em;
+}
+
+.event-form {
+    width: 80%;
+    margin: auto;
+}
+
+.create-event-btn {
+    margin-top: 1em;
+    width: 100%;
 }

@@ -1,21 +1,21 @@
 angular.module('MainCtrls', ['MainServices'])
-    .controller('NewEventCtrl', ['$scope', 'Event', '$location', 'Alerts', function($scope, Event, $location, Alerts){
-    	$scope.event = {
-    		user: '',
-    		title: '',
-    		date: '',
-    		items: ''
-    	};
+    .controller('NewEventCtrl', ['$scope', 'Event', '$location', 'Alerts', function($scope, Event, $location, Alerts) {
+        $scope.event = {
+            user: '5931a86ceca3f637d24ec5b2',
+            title: '',
+            date: '',
+            items: ''
+        };
 
-    	$scope.createEvent = function(){
-    	console.log($scope.event)
-    		Event.save($scope.event, function success(data){
-    			$location.path('/profile/5931a86ceca3f637d24ec5b2')
-    		}, function error(data){
-    			Alerts.add('danger', 'Event not created')
-    			console.log(data)
-    		})
-    	}
+        $scope.createEvent = function() {
+            console.log($scope.event)
+            Event.save($scope.event, function success(data) {
+                $location.path('/profile/5931a86ceca3f637d24ec5b2')
+            }, function error(data) {
+                Alerts.add('danger', 'Event not created')
+                console.log(data)
+            })
+        }
 
     }])
     .controller('NavCtrl', ['$scope', '$http', 'Auth', 'Alerts', '$state', function($scope, $http, Auth, Alerts, $state) {
@@ -61,7 +61,7 @@ angular.module('MainCtrls', ['MainServices'])
                 Auth.saveToken(res.data);
                 Alerts.add('success', 'Signed up & Logged in!');
                 console.log('Token:', res.data);
-                $location.path('/profile/5931a86ceca3f637d24ec5b2');///replace with your user ID
+                $location.path('/profile/5931a86ceca3f637d24ec5b2'); ///replace with your user ID
             }, function error(res) {
                 Alerts.add('danger', 'Incorrect email/password');
                 console.log(res);
@@ -78,7 +78,7 @@ angular.module('MainCtrls', ['MainServices'])
                 Auth.saveToken(res.data);
                 Alerts.add('success', 'Logged in!');
                 console.log('Token:', res.data);
-                $location.path('/profile/5931a86ceca3f637d24ec5b2');///replace with your user ID
+                $location.path('/profile/5931a86ceca3f637d24ec5b2'); ///replace with your user ID
 
             }, function error(res) {
                 Alerts.add('danger', 'Incorrect email/password');
