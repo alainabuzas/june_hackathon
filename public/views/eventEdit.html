@@ -12,7 +12,7 @@
             </div>
             <div class="form-group items">
                 <label for="item">What Guests Should Bring</label>
-                <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[0]" required>
+                <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[0]">
                 <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[1]">
                 <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[2]">
                 <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[3]">
@@ -22,6 +22,12 @@
                 <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[7]">
                 <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[8]">
                 <input type="text" class="form-control" id="item" placeholder="Items to Bring" ng-model="event.items[9]">
+
+            </div>
+            <div class="form-group not-items">
+                <label for="not-item">Please Do Not Bring</label>
+                <br>
+                <textarea rows="4" columns="50"></textarea>
             </div>
             <button type="submit" class="create-event-btn">I'm Ready to Party</button>
         </form>
