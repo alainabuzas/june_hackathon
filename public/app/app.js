@@ -5,7 +5,7 @@ app.config([
         '$urlRouterProvider',
         '$locationProvider',
         function($stateProvider, $urlRouterProvider, $locationProvider) {
-            $urlRouterProvider.otherwise('/404');
+        $urlRouterProvider.otherwise('/404');
             // $httpProvider.interceptors.push('AuthInterceptor');
         $stateProvider
             .state('home', {
@@ -29,7 +29,7 @@ app.config([
                 controller: 'NewEventCtrl'
             })
             .state('showEvent', {
-                url: '/show',
+                url: '/showEvent/:id',
                 templateUrl: 'views/eventShow.html',
                 controller: 'ShowEventCtrl'
             })
