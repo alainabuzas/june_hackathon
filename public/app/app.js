@@ -1,4 +1,4 @@
-var app = angular.module('BBQApp', ['ui.router', 'ui.bootstrap']);
+var app = angular.module('BBQApp', ['ui.router', 'ui.bootstrap', 'MainCtrls']);
 
 app.config([
     '$stateProvider',
@@ -12,26 +12,26 @@ app.config([
                 url: '/',
                 templateUrl: 'views/home.html'
             })
-            // .state('login', {
-            //     url: '/login',
-            //     templateUrl: 'views/userLogin.html'/*,
-            //     controller: 'LoginCtrl'*/
-            // })
-            // .state('signup', {
-            //     url: '/signup',
-            //     templateUrl: 'views/userSignup.html'/*,
-            //     controller: 'SignupCtrl'*/
-            // })
-            // .state('profile', {
-            //     url: 'profile',
-            //     templateUrl: 'views/profile.html'/*,
-            //     controller: 'ProfileCtrl'*/
-            // });
+            .state('login', {
+                url: '/login',
+                templateUrl: 'views/userLogin.html',
+                controller: 'LoginCtrl'
+            })
+            .state('signup', {
+                url: '/signup',
+                templateUrl: 'views/userSignup.html',
+                controller: 'SignupCtrl'
+            })
+            .state('profile', {
+                url: 'profile',
+                templateUrl: 'views/profile.html',
+                controller: 'ProfileCtrl'
+            });
 
         $locationProvider.html5Mode(true);
     }
 ])
 
-.config(['$httpProvider', function($httpProvider) {
-    //$httpProvider.interceptors.push('AuthInterceptor');
-}]);
+// .config(['$httpProvider', function($httpProvider) {
+//     $httpProvider.interceptors.push('AuthInterceptor');
+// }]);

@@ -1,12 +1,24 @@
 angular.module('MainCtrls', ['MainServices'])
+	.controller('NavCtrl', ['$scope', 'Auth', '$state', 'Alerts', function($scope, Auth, $state, Alerts) {
+        $scope.Auth = Auth;
+        $scope.logout = function() {
+            Auth.removeToken();
+            Alerts.add('success', 'Logged out!');
+            $state.reload();
+        };
+  }])
+	.controller('AlertsCtrl', ['$scope', 'Alerts', function($scope, Alerts) {
+        $scope.Alerts = Alerts;
+  }])
 	.controller('SignupCtrl', ['$scope', '$http', '$location', 'Auth', 'Alerts', function($scope, $http, $location, Auth, Alerts) {
         $scope.user = {
             name: '',
             email: '',
             password: '',
-            phoneNumber: ''
+            phone: ''
         };
         $scope.userSignup = function() {
+        console.log($scope.user)
             $http.post('/api/users', $scope.user).then(function success(res) {
                     $location.path('/');
                 },
@@ -24,7 +36,7 @@ angular.module('MainCtrls', ['MainServices'])
                 console.log(res);
             });
         }
-    }])
+  }])
   .controller('LoginCtrl', ['$scope', '$http', '$location', 'Auth', 'Alerts', function($scope, $http, $location, Auth, Alerts) {
       $scope.user = {
           email: '',
