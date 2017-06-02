@@ -1,14 +1,15 @@
 <div class="profile-content container">
     <h3>Your Profile Information</h3>
     <div class="showprofile">
+        <div class="profile-info">
             <p>First Name: {{ user.name }}</p>
             <p>Email: {{ user.email }}</p>
+        </div>
+        <div class="profile-events">
             <p>Your Events:</p>
             <p ng-repeat="event in userEvents">
-                {{event.title}}:
-                {{event.date}}
+                {{event.title}}: {{event.date}}
             </p>
         </div>
-
     </div>
 </div>

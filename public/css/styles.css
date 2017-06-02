@@ -1,5 +1,9 @@
 /* UNIVERSAL */
 
+body {
+    margin: 0;
+}
+
 * {
     font-family: 'Poppins', sans-serif;
     color: #000;
@@ -46,7 +50,7 @@ button:hover {
 
 .form-control {
     border: none;
-    border-bottom: 1px solid #CDEFFE;
+    border-bottom: 2px solid #CDEFFE;
     padding: 10px;
 }
 
@@ -54,12 +58,66 @@ nav {
     background-color: #fff;
     width: 100%;
     margin: 0;
+    top: 0;
     padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    box-shadow: 0px .5px 5px #715956;
+    position: fixed;
+    z-index: 1;
 }
 
 
 /* HOMEPAGE */
 
-.ls {
-    color: ;
+.home {
+    background-image: url('/css/images/bbq-so-good.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+}
+
+.info {
+    background-color: #fff;
+    width: 50%;
+    margin: auto;
+    padding: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-head {
+    margin-top: 1em;
+}
+
+.signin-form {
+    width: 60%;
+}
+
+.signin-btn,
+.form-group,
+.form-control {
+    width: 100%;
+}
+
+.signin-btn {
+    margin-top: 2em;
+}
+
+
+/* PROFILE */
+
+.profile-content {
+    margin-top: 7em;
+}
+
+
+/* 404 */
+
+.four-oh-four {
+    text-align: center;
 }
