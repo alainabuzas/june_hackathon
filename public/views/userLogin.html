@@ -1,5 +1,7 @@
-<div class="login-pg">
-    <div class="container">
+<div class="home login-pg">
+    <div class="info container">
+        <h1>Welcome to Grillist</h1>
+        <a href="/signup" ng-hide="Auth.isLoggedIn()">Need to create an account? Click here to sign up!</a>
         <form ng-submit="userLogin()" class="signin-form">
             <h3>Login</h3>
             <div class="form-group signin">

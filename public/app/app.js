@@ -7,7 +7,6 @@ app.config([
         function($stateProvider, $urlRouterProvider, $locationProvider) {
             $urlRouterProvider.otherwise('/404');
             // $httpProvider.interceptors.push('AuthInterceptor');
-
         $stateProvider
             .state('home', {
                 url: '/',
@@ -27,6 +26,7 @@ app.config([
             .state('404', {
                 url: '/404',
                 templateUrl: 'views/404.html'
+
 
                 });
 
