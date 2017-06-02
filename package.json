@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/markdgold/june_hackathon/issues"
   },
-  "homepage": "https://github.com/markdgold/june_hackathon#readme"
+  "homepage": "https://github.com/markdgold/june_hackathon#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-jwt": "^5.3.0",
+    "jsonwebtoken": "^7.4.1",
+    "mongoose": "^4.10.4",
+    "path": "^0.12.7"
+  }
 }
