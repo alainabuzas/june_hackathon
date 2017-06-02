@@ -8,14 +8,15 @@ angular.module('MainCtrls', ['MainServices'])
     	};
 
     	$scope.createEvent = function(){
-    	console.log($scope.event)
+    	console.log($scope.event);
     		Event.save($scope.event, function success(data){
-    			$location.path('/showEvent/'+$scope.event.id)
+    			console.log('made event, this is data:', data);
+    			$location.path('/showEvent/'+data._id);
     		}, function error(data){
-    			Alerts.add('danger', 'Event not created')
-    			console.log(data)
-    		})
-    	}
+    			Alerts.add('danger', 'Event not created');
+    			console.log(data);
+    		});
+    	};
     }])
     .controller('ShowEventCtrl', ['$scope', '$stateParams', 'Event', '$location', 'Alerts', function($scope, $stateParams, Event, $location, Alerts){
     	$scope.event={};
