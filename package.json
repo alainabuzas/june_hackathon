@@ -1,0 +1,19 @@
+{
+  "name": "june_hackathon",
+  "version": "1.0.0",
+  "description": "June hackathon paired with UX students",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markdgold/june_hackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markdgold/june_hackathon/issues"
+  },
+  "homepage": "https://github.com/markdgold/june_hackathon#readme"
+}
