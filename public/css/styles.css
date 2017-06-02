@@ -1,3 +1,5 @@
+/* UNIVERSAL */
+
 * {
     font-family: 'Poppins', sans-serif;
     color: #000;
@@ -13,7 +15,22 @@ a:hover {
     color: #F9D035;
 }
 
+button {
+    border: none;
+    padding: 20px;
+    font-size: 15px;
+}
+
 .container {
     width: 70%;
     margin: auto;
 }
+
+.form-control {
+    border: none;
+    background-color: #CDEFFE;
+    padding: 10px;
+}
+
+
+/* HOMEPAGE */
