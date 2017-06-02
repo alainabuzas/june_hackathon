@@ -17,17 +17,19 @@ router.route('/')
     // Route to create a new event and add that event to the current user
     // userEvents
     .post(function(req, res) {
-        var userId = req.user.id;
-        var eventTitle = req.body.name;
+        console.log('posting', req.body)
+        var userId = req.body.user;
+        var eventTitle = req.body.title;
         var eventDate = req.body.date;
         Event.create({
             title: eventTitle,
             date: eventDate
         }, function(err, event) {
+            console.log('event.id====', event._id)
             if (err) return res.status(500).send(err);
-            // User.findByIdAndUpdate(userId, { $push: { userEvents: [event._id] } }, function(err) {
-            //     if (err) return res.status(500).send(err);
-            // });
+            User.findByIdAndUpdate(userId, { $push: { userEvents: [event._id] } }, function(err) {
+                if (err) return res.status(500).send(err);
+            });
             res.send(event);
         });
     });
