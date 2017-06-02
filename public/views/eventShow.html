@@ -1,12 +1,24 @@
-<div class="eventedit-pg">
-    <div class="event-info">
-        <h2>Create a New Event</h2>
-        <p>{{ event.title }}</p>
-        <p> {{ event.date }}</p>
-        <div class="what-to-bring">
-            <div class="one-item" ng-model="items" ng-repeat="item in items">
-                <p>{{ event.item }}</p>
+<div class="big">
+    <div class="eventedit-pg">
+        <div class="event-info">
+            <h2>{{ event.title }}</h2>
+            <h4>Date: {{ event.date }}</h4>
+            <h3>Please RSVP:</h3>
+            <div class="rsvp">
+                <input type="radio" name="rsvp" value="yes">I'll be there!
+                <input type="radio" name="rsvp" value="no">Sorry, not this time.
             </div>
+            <div class="what-to-bring">
+                <hh3>What to Bring</h3>
+                    <div class="one-item" ng-repeat="item in event.items">
+                        <p>
+                            <input id="checkBox" type="checkbox"> {{ item }}
+                        </p>
+                    </div>
+                    <div class="dont-even">
+                        <p>{{ event.dont }}</p>
+                    </div>
+            </div>
+            <div class="sharethis-inline-share-buttons"></div>
         </div>
     </div>
-</div>

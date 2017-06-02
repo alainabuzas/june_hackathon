@@ -80,7 +80,8 @@ nav {
     height: 100vh;
 }
 
-.info {
+.info,
+.event-info {
     background-color: #fff;
     width: 50%;
     margin: auto;
@@ -180,6 +181,7 @@ nav {
     width: 50%;
     padding: 2em;
     margin: auto;
+    margin-bottom: 2em;
 }
 
 .event-form {
@@ -194,4 +196,31 @@ nav {
 
 textarea {
     width: 100%;
+}
+
+.one-item p {
+    font-weight: 400;
+}
+
+.big {
+    height: 100vh;
+}
+
+.one-item {
+    width: 100%;
+}
+
+.rsvp {
+    width: 100%;
+    text-align: center;
+}
+
+.what-to-bring {
+    margin-bottom: 4em;
+}
+
+.info,
+.newevent,
+.event-info {
+    border-bottom: 6px solid #F9D035;
 }
