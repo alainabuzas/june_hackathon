@@ -3,6 +3,9 @@ var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
 
 var UserSchema = mongoose.Schema({
+    name: {
+        type: String
+    },
     email: {
         type: String,
         required: true,
@@ -13,7 +16,7 @@ var UserSchema = mongoose.Schema({
         required: true
     },
     phoneNumber: {
-        type: String,
+        type: Number,
         unique: true
     },
     userEvents: [{ type: Schema.Types.ObjectId, ref: 'Event' }]

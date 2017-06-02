@@ -12,8 +12,8 @@ router.post('/', (req, res) => {
 });
 
 //Route to get guest by id
-router.route('/:id').get((req, res) => {
-    Guest.findBy
+router.route('/:id').get((req,res)=>{
+
 })
 
 module.exports = router;

@@ -27,9 +27,12 @@ app.use(function(err, req, res, next) {
     }
 });
 
-app.use('/api/events', require('./controllers/events'));
-app.use('/api/guests', require('./controllers/guests'));
-app.use('/api/items', require('./controllers/items'));
+
+
+// app.use('/api/events', require('./controllers/events'));
+// app.use('/api/guests', require('./controllers/guests'));
+// app.use('/api/items', require('./controllers/items'));
+
 
 
 app.post('/api/auth', function(req, res) {
