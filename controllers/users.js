@@ -5,7 +5,7 @@ var router = express.Router();
 
 // Route to create a new user
 router.post('/', function(req, res) {
-    console.log(req.body)
+    console.log('creating user', req.body)
     User.create(req.body, function(err, user) {
         if (err) return res.status(500).send(err);
         res.send(user);

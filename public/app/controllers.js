@@ -27,9 +27,10 @@ angular.module('MainCtrls', ['MainServices'])
             name: '',
             email: '',
             password: '',
-            phoneNumber: ''
+            phone: ''
         };
         $scope.userSignup = function() {
+        console.log($scope.user)
             $http.post('/api/users', $scope.user).then(function success(res) {
                     $location.path('/');
                 },
@@ -47,21 +48,23 @@ angular.module('MainCtrls', ['MainServices'])
                 console.log(res);
             });
         }
-    }])
-    .controller('LoginCtrl', ['$scope', '$http', '$location', 'Auth', 'Alerts', function($scope, $http, $location, Auth, Alerts) {
-        $scope.user = {
-            email: '',
-            password: ''
-        };
-        $scope.userLogin = function() {
-            $http.post('/api/auth', $scope.user).then(function success(res) {
-                Auth.saveToken(res.data);
-                Alerts.add('success', 'Logged in!');
-                console.log('Token:', res.data);
-                $location.path('/');
-            }, function error(res) {
-                Alerts.add('danger', 'Incorrect email/password');
-                console.log(res);
-            });
-        }
-    }])
+
+  }])
+  .controller('LoginCtrl', ['$scope', '$http', '$location', 'Auth', 'Alerts', function($scope, $http, $location, Auth, Alerts) {
+      $scope.user = {
+          email: '',
+          password: ''
+      };
+      $scope.userLogin = function() {
+          $http.post('/api/auth', $scope.user).then(function success(res) {
+              Auth.saveToken(res.data);
+              Alerts.add('success', 'Logged in!');
+              console.log('Token:', res.data);
+              $location.path('/');
+          }, function error(res) {
+              Alerts.add('danger', 'Incorrect email/password');
+              console.log(res);
+          });
+      }
+  }])
+

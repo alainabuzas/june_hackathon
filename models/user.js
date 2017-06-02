@@ -15,11 +15,11 @@ var UserSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    phoneNumber: {
-        type: Number,
+    phone: {
+        type: String,
         unique: true
-    },
-    userEvents: [{ type: Schema.Types.ObjectId, ref: 'Event' }]
+    }/*,
+    userEvents: [{ type: Schema.Types.ObjectId, ref: 'Event' }]*/
 });
 
 UserSchema.set('toJSON', {
@@ -28,7 +28,8 @@ UserSchema.set('toJSON', {
             id: ret._id,
             email: ret.email,
             name: ret.name,
-            userEvents: ret.userEvents
+            phone: ret.phone/*,
+            userEvents: ret.userEvents*/
         };
         return returnJson;
     }

@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/api/users', expressJWT({ secret: secret })
-    .unless({ path: ['/api/users'], method: 'POST' }));
+// app.use('/api/users', expressJWT({ secret: secret })
+//     .unless({ path: ['/api/users'], method: 'POST' }));
 
 app.use(function(err, req, res, next) {
     if (err.name === 'UnauthorizedError') {
@@ -29,6 +29,7 @@ app.use(function(err, req, res, next) {
 
 
 
+app.use('/api/users', require('./controllers/users'));
 // app.use('/api/events', require('./controllers/events'));
 // app.use('/api/guests', require('./controllers/guests'));
 // app.use('/api/items', require('./controllers/items'));

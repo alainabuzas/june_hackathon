@@ -59,4 +59,23 @@ angular.module('MainServices', ['ngResource'])
             alerts.splice(idx, 1);
         }
     }
-}]);
+}])
+/*
+.factory('AuthInterceptor', ['Auth', function(Auth) {
+    // if querying other APIs, add URLs to this array
+    var excludedEndpoints = [
+        'https://swapi.co/api/films'
+    ];
+
+    return {
+        request: function(config) {
+            var token = Auth.getToken();
+            var excludedEndpoint = excludedEndpoints.indexOf(config.url) > -1;
+            if (token && !excludedEndpoint) {
+                config.headers = config.headers || {};
+                config.headers.Authorization = 'Bearer ' + token;
+            }
+            return config;
+        }
+    }
+}])*/

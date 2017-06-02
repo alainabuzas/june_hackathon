@@ -1,4 +1,4 @@
-var app = angular.module('BBQApp', ['ui.router', 'ui.bootstrap']);
+var app = angular.module('BBQApp', ['ui.router', 'ui.bootstrap', 'MainCtrls']);
 
 app.config([
     '$stateProvider',
@@ -31,12 +31,13 @@ app.config([
             .state('404', {
                 url: '/404',
                 templateUrl: 'views/404.html'
+
             });
 
         $locationProvider.html5Mode(true);
     }
 ])
+// .config(['$httpProvider', function($httpProvider) {
+//     $httpProvider.interceptors.push('AuthInterceptor');
+// }]);
 
-.config(['$httpProvider', function($httpProvider) {
-    // $httpProvider.interceptors.push('AuthInterceptor');
-}]);
